@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login - Spice Route Kitchen</title>
+
+	<style>
+		body {
+			font-family: Arial;
+			margin: 0;
+			background: #fff3e0;
+		}
+
+		header {
+			background: #e65100;
+			color: white;
+			padding: 25px;
+			text-align: center;
+			font-size: 35px;
+			letter-spacing: 2px;
+		}
+
+		.top-buttons {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.top-buttons a {
+			background: #e65100;
+			color: white;
+			padding: 10px 20px;
+			text-decoration: none;
+			margin: 10px;
+			border-radius: 8px;
+			font-weight: bold;
+		}
+
+		.top-buttons a:hover {
+			background: #bf360c;
+		}
+
+		.form-box {
+			width: 350px;
+			background: white;
+			margin: 40px auto;
+			padding: 25px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px #c7b6a3;
+		}
+
+		.form-box h2 {
+			text-align: center;
+			color: #e65100;
+			margin-bottom: 20px;
+		}
+
+		input {
+			width: 95%;
+			padding: 10px;
+			margin: 10px 0;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+
+		button {
+			width: 100%;
+			padding: 10px;
+			background: #e65100;
+			border: none;
+			color: white;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 10px;
+		}
+
+		button:hover {
+			background: #bf360c;
+		}
+
+		.output {
+			color: green;
+			text-align: center;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<header>Spice Route Kitchen - Login</header>
+
+	<div class="top-buttons">
+		<a href="index.html">Home</a>
+		
+	</div>
+
+	<div class="form-box">
+
+		<h2>Login to Your Account</h2>
+
+		<form onsubmit="return validateLogin()">
+			<input type="text" id="email" placeholder="Email">
+			<input type="password" id="pass" placeholder="Password">
+			<button>Login</button>
+		</form>
+
+		<p class="output" id="output"></p>
+	</div>
+
+	<script>
+		function validateLogin() {
+			let e = document.getElementById("email").value
+			let p = document.getElementById("pass").value
+
+			if (e == "" || p == "") {
+				alert("Please fill all fields")
+				return false
+			}
+
+			if (p.length < 4) {
+				alert("Password must be at least 4 characters")
+				return false
+			}
+
+			document.getElementById("output").innerText = "Login successful!"
+			return false
+		}
+	</script>
+
+</body>
+</html>
